@@ -1,0 +1,73 @@
+:root {
+  --sisd-blue: #00AEEF;
+  --sisd-grey: #58595B;
+  --color-white: #fff;
+  --color-light-grey: #f3f3f3;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-light-grey); /* Light gray background for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background-color: var(--color-white); /* White box */
+  color: var(--sisd-grey);
+  padding: 40px;
+  border: 1px solid var(--sisd-grey); /* Gray border */
+  border-radius: 10px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Soft shadow */
+}
+
+h2 {
+  color: var(--sisd-grey); /* Use SISD grey for header */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+label {
+  margin-top: 10px;
+  color: var(--sisd-grey); /* Gray labels */
+  text-align: left;
+}
+
+input, select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid var(--sisd-grey); /* Gray borders */
+  border-radius: 4px;
+  color: var(--sisd-grey); /* Gray text */
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--sisd-blue); /* SISD blue button */
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #009ddd; /* Slightly darker blue */
+}
+
+#loginResponse {
+  margin-top: 10px;
+  color: red;
+  text-align: center;
+}
