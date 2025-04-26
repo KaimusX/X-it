@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Facility Rental Portal - Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="role">Role:</label>
+      <select id="role" name="role" required>
+        <option value="">Select Role</option>
+        <option value="renter">Renter</option>
+        <option value="staff">Staff</option>
+      </select>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div id="loginResponse"></div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
