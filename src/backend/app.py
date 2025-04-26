@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify
+from flask import send_from_directory
+from flask_cors import CORS
 import requests  # For ChatGPT API calls (OpenAI)
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -9,6 +11,7 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 app = Flask(__name__)
+CORS(app)
 
 # ---- Initialize SQLite Database ----
 def init_db():
@@ -76,7 +79,7 @@ def login():
 
     conn = sqlite3.connect('reservations.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT id, password_hash, role FROM users WHERE username = ?', (username,))
+    cursor.execute('SELECT id, password_hash, role FROM Users WHERE name = ?', (username,))
     user = cursor.fetchone()
 
     if user:
@@ -88,7 +91,7 @@ def login():
     else:
         # User does not exist, create it
         password_hash = generate_password_hash(password)
-        cursor.execute('INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)', (username, password_hash, role))
+        cursor.execute('INSERT INTO Users (name, password_hash, role) VALUES (?, ?, ?)', (username, password_hash, role))
         conn.commit()
         return jsonify({'success': True, 'message': 'User created'})
 
@@ -124,6 +127,12 @@ def analyze_reservation(event_type, attendees, facility):
     result = response.json()
     answer = result['choices'][0]['message']['content']
     return answer
+
+# ---- Serve Frontend Files ----
+@app.route('/frontend/<path:path>')
+def serve_frontend(path):
+    frontend_dir = os.path.join(os.path.dirname(__file__), '../frontend')
+    return send_from_directory(frontend_dir, path)
 
 # ---- Run the Flask app ----
 if __name__ == '__main__':

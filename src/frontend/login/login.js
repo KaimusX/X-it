@@ -16,7 +16,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
   const data = { username, password, role };
 
   try {
-    const response = await fetch('http://localhost:5000/login', {
+    const response = await fetch('http://127.0.0.1:5000/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -27,9 +27,9 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     if (result.success) {
       // Redirect based on role
       if (role === 'renter') {
-        window.location.href = 'renter_dashboard.html';
+        window.location.href = '../renter-site/index.html';
       } else {
-        window.location.href = 'staff_dashboard.html';
+        window.location.href = 'staff-site/index.html';
       }
     } else {
       document.getElementById('loginResponse').innerText = 'Invalid credentials!';
