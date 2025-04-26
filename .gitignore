@@ -12,4 +12,7 @@ __pycache__/
 *.pyd
 
 # Secret file
-.env
+*.env
+
+# Database
+*.db
