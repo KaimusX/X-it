@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import requests  # For ChatGPT API calls (OpenAI)
 import sqlite3
+from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 import os
 
@@ -37,16 +38,17 @@ def home():
 # ---- Reservation Route ----
 @app.route('/reserve', methods=['POST'])
 def reserve():
-    print(f"Received reservation: {event_type}, {attendees} attendees at {facility}")
     data = request.json  # Expecting JSON data from frontend
     event_type = data.get('event_type')
     attendees = data.get('attendees')
     facility = data.get('facility')
 
-# ---- AI Call (ChatGPT) ----
+    print(f"Received reservation: {event_type}, {attendees} attendees at {facility}")
+
+    # AI Call (ChatGPT)
     analysis = analyze_reservation(event_type, attendees, facility)
 
-# ---- Insert into SQLite ----
+    # Insert into SQLite
     conn = sqlite3.connect('reservations.db')
     cursor = conn.cursor()
     cursor.execute('''
@@ -60,6 +62,35 @@ def reserve():
         'message': 'Reservation received and stored!',
         'analysis': analysis
     })
+
+# ---- Login Route ----
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+    role = data.get('role')
+
+    if not username or not password or not role:
+        return jsonify({'success': False, 'message': 'Missing fields'}), 400
+
+    conn = sqlite3.connect('reservations.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT id, password_hash, role FROM users WHERE username = ?', (username,))
+    user = cursor.fetchone()
+
+    if user:
+        user_id, password_hash, user_role = user
+        if check_password_hash(password_hash, password):
+            return jsonify({'success': True})
+        else:
+            return jsonify({'success': False, 'message': 'Invalid credentials'})
+    else:
+        # User does not exist, create it
+        password_hash = generate_password_hash(password)
+        cursor.execute('INSERT INTO users (username, password_hash, role) VALUES (?, ?, ?)', (username, password_hash, role))
+        conn.commit()
+        return jsonify({'success': True, 'message': 'User created'})
 
 # ---- AI Analysis Function ----
 def analyze_reservation(event_type, attendees, facility):
