@@ -10,3 +10,38 @@ img{
     object-fit: cover;
     object-position: center;
 }
+
+header{
+    padding-top:20px ;
+    padding-left: 70px;
+    padding-right: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+header img{
+    width: 20px;
+}
+
+.headerLinks{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.profile{
+    display: flex;
+    gap:15px;
+    padding: 10px 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+ .profile .icon{
+    transform: scale(1.7);
+ }
