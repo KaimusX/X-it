@@ -1,0 +1,15 @@
+# macOS system files
+.DS_STORE
+
+# Python virtual environments
+env/
+venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Secret file
+.env
