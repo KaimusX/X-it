@@ -125,7 +125,7 @@ main{
 .categorySection{
     display: grid;
     grid-template-columns: repeat(17, 1fr);
-    margin-top: 20px;
+    margin-top: 5px;
     padding-left: 60px;
     padding-right: 60px;
     font-size: 15px;
