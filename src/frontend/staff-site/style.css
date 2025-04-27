@@ -39,6 +39,15 @@
   
   .sidebar ul li {
     margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sidebar ul li svg{
+    margin: 15px 0;
+    display: flex;
+    width: 30px;
   }
   
   .sidebar ul li a {
