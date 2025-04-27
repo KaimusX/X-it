@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve Facility</title>
+  <link rel="stylesheet" href="reserve.css">
+</head>
+<body>
+  <a href="../index.html" class="back-link">&larr; Back to Facility Selection</a>
+  <div class="reserve-container">
+    <h2>Reserve Facility</h2>
+    <form id="reservationForm">
+      <!-- Facility Name (pre-filled) -->
+      <label for="facility">Facility Name</label>
+      <input type="text" id="facility" name="facility" readonly>
+
+      <!-- Location Type -->
+      <label>Location Type</label>
+      <div class="location-options">
+        <label><input type="radio" name="location" value="Gym"> Gym</label>
+        <label><input type="radio" name="location" value="Classroom"> Classroom</label>
+        <label><input type="radio" name="location" value="Field"> Field</label>
+        <label><input type="radio" name="location" value="Cafeteria"> Cafeteria</label>
+        <label><input type="radio" name="location" value="Other"> Other</label>
+      </div>
+
+      <!-- Reason for Use -->
+      <label for="reason">Reason for Use</label>
+      <textarea id="reason" name="reason" rows="3"></textarea>
+
+      <!-- Requester Information -->
+      <label for="requester_name">Requester Name</label>
+      <input type="text" id="requester_name" name="requester_name">
+
+      <label for="organization">Organization Name</label>
+      <input type="text" id="organization" name="organization">
+
+      <label for="tax_id">Non-Profit Tax ID</label>
+      <input type="text" id="tax_id" name="tax_id">
+
+      <!-- Requests (A/C, Heating, Lights) -->
+      <label>Requests</label>
+      <div class="requests-options">
+        <label><input type="checkbox" name="requests" value="Air Conditioning"> Air Conditioning</label>
+        <label><input type="checkbox" name="requests" value="Heating"> Heating</label>
+        <label><input type="checkbox" name="requests" value="Lights"> Lights (HS football fields only)</label>
+      </div>
+
+      <!-- Special Arrangements / Attendees -->
+      <label for="attendees">Number of Attendees</label>
+      <input type="number" id="attendees" name="attendees" min="1">
+
+      <label for="special_arrangements">Special Arrangements</label>
+      <textarea id="special_arrangements" name="special_arrangements" rows="3"></textarea>
+
+      <!-- Date and Time Information -->
+      <label>Day(s)</label>
+      <div class="days-options">
+        <label><input type="checkbox" name="days" value="Sunday"> Sunday</label>
+        <label><input type="checkbox" name="days" value="Monday"> Monday</label>
+        <label><input type="checkbox" name="days" value="Tuesday"> Tuesday</label>
+        <label><input type="checkbox" name="days" value="Wednesday"> Wednesday</label>
+        <label><input type="checkbox" name="days" value="Thursday"> Thursday</label>
+        <label><input type="checkbox" name="days" value="Friday"> Friday</label>
+        <label><input type="checkbox" name="days" value="Saturday"> Saturday</label>
+      </div>
+
+      <label for="date_from">Date From</label>
+      <input type="date" id="date_from" name="date_from">
+
+      <label for="date_to">Date To</label>
+      <input type="date" id="date_to" name="date_to">
+
+      <label for="time_from">Time From</label>
+      <input type="time" id="time_from" name="time_from">
+
+      <label for="time_to">Time To</label>
+      <input type="time" id="time_to" name="time_to">
+
+      <!-- Agreement -->
+      <label><input type="checkbox" id="agreement" name="agreement"> I agree to the terms and conditions including the Hold Harmless Agreement.</label>
+
+      <button type="submit">Submit Reservation</button>
+    </form>
+
+    <div id="responseMessage"></div>
+  </div>
+  <script src="reserve.js"></script>
+</body>
+</html>

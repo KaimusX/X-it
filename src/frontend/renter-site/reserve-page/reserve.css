@@ -1,0 +1,103 @@
+:root {
+  --sisd-blue: #00AEEF;
+  --sisd-grey: #58595B;
+  --color-white: #fff;
+  --color-light-grey: #f3f3f3;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--sisd-blue);  /* SISD Blue background */
+  margin: 0;
+  padding: 0;
+}
+
+.reserve-container {
+  max-width: 800px;  /* Slightly narrower for better readability */
+  margin: 40px auto;
+  background-color: var(--color-white);
+  padding: 40px;
+  border: 1px solid var(--sisd-grey);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  text-align: center;  /* Center the title */
+  color: var(--sisd-grey);
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;  /* Switch to column layout */
+  gap: 20px;  /* Space between fields */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--sisd-grey);
+  border-radius: 4px;
+  color: var(--sisd-grey);
+  font-size: 1rem;
+}
+
+.requests-options,
+.location-options,
+.days-options,
+.duration-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.requests-options label,
+.location-options label,
+.days-options label,
+.duration-options label {
+  margin-right: 15px;
+}
+
+button {
+  align-self: center;  /* Center the button */
+  width: 200px;
+  padding: 12px;
+  background-color: var(--sisd-blue);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #009ddd;
+}
+
+.back-link {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: var(--sisd-grey);  /* Gray button */
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.back-link:hover {
+  background-color: #444;  /* Slightly darker on hover */
+}
+
+
+#responseMessage {
+  margin-top: 15px;
+  color: var(--sisd-grey);
+  text-align: center;
+}
