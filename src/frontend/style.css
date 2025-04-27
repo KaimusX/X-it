@@ -1,56 +1,55 @@
 :root {
-    --sisd-blue: #00AEEF;
-    --sisd-grey: #58595B;
-    --color-white: #fff;
-    --color-light-grey: #f3f3f3;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: var(--color-light-grey); /* Light grey background for contrast */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .container {
-    background-color: var(--color-white); /* White box */
-    color: var(--sisd-grey);
-    padding: 40px;
-    border: 1px solid var(--sisd-grey); /* Subtle border */
-    border-radius: 10px;
-    text-align: center;
-    width: 350px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
-  }
-  
-  h1 {
-    color: var(--sisd-grey);
-  }
-  
-  p {
-    color: var(--sisd-grey);
-  }
-  
-  .role-buttons {
-    margin-top: 20px;
-  }
-  
-  .btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--color-white);
-    background-color: var(--sisd-blue);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow */
-  }
-  
-  .btn:hover {
-    background-color: #009ddd; /* Slightly darker blue */
-  }
-  
+  --sisd-blue: #00AEEF;
+  --sisd-grey: #58595B;
+  --color-white: #fff;
+  --color-light-grey: #f3f3f3;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-light-grey); /* Light grey background for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: var(--color-white); /* White box */
+  color: var(--sisd-grey);
+  padding: 40px;
+  border: 1px solid var(--sisd-grey); /* Subtle border */
+  border-radius: 10px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+}
+
+h1 {
+  color: var(--sisd-grey);
+}
+
+p {
+  color: var(--sisd-grey);
+}
+
+.role-buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-white);
+  background-color: var(--sisd-blue);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+.btn:hover {
+  background-color: #009ddd; /* Slightly darker blue */
+}
