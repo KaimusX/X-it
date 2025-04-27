@@ -7,29 +7,25 @@
 </head>
 <body>
     <header>
-        <button onclick="goHome()">🏠 Home</button>
-        <h1 id="facility-name">Facility Name</h1>
+        <h1>Facility Dashboard</h1>
+        <button onclick="goHome()">Home</button>
     </header>
 
-    <section id="facility-info">
-        <img id="facility-image" src="facility-images/gym.jpg" alt="Facility Image">
-    </section>
+    <main>
+        <div class="sidebar">
+            <button onclick="showData('revenue')">Revenue</button>
+            <button onclick="showData('usage')">Usage Requests</button>
+            <button onclick="showData('payments')">Payments</button>
+        </div>
 
-    <section id="metrics">
-        <div class="metric">
-            <h2>Revenue</h2>
-            <p id="revenue">$0</p>
-        </div>
-        <div class="metric">
-            <h2>Usage Requests</h2>
-            <p id="usage-requests">0</p>
-        </div>
-        <div class="metric">
-            <h2>Payments</h2>
-            <p id="payments">0</p>
-        </div>
-    </section>
+        <div id="info-box">
+            <canvas id="infoChart" width="600" height="400"></canvas>
+    
+            </div>
+    </main>
 
+    <script src="dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dashboard.js"></script>
 </body>
 </html>
