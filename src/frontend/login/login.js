@@ -29,7 +29,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
       if (role === 'renter') {
         window.location.href = '../renter-site/index.html';
       } else {
-        window.location.href = 'staff-site/index.html';
+        window.location.href = '../staff-site/index.html';
       }
     } else {
       document.getElementById('loginResponse').innerText = 'Invalid credentials!';
