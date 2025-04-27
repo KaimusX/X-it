@@ -90,6 +90,11 @@
     text-align: center;
     box-shadow: 4px 4px 14px -6px black;
   }
+
+  .facility a{
+    text-decoration: none;
+    font-size: 20px;
+  }
   
   .facility:hover {
     transform: translateY(-5px);
