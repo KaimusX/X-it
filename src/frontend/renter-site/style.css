@@ -9,6 +9,13 @@
     font-optical-sizing: auto;
 }
 
+:root {
+    --sisd-blue: #00AEEF;
+    --sisd-grey: #58595B;
+    --color-white: #fff;
+    --color-light-grey: #f3f3f3;
+  }
+
 
 
 img{
@@ -113,13 +120,17 @@ main{
     width: 40px;
     height: 40px;
 
-    background-color: red;
+    background-color: var(--sisd-blue);
     top: 6px;
     right: 7px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.search button:hover{
+    background-color: #009dd6 ;
 }
 
 .search button img{
