@@ -1,56 +1,136 @@
 :root {
-    --sisd-blue: #00AEEF;
-    --sisd-grey: #58595B;
-    --color-white: #fff;
-    --color-light-grey: #f3f3f3;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: var(--color-light-grey); /* Light grey background for contrast */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
-  .container {
-    background-color: var(--color-white); /* White box */
-    color: var(--sisd-grey);
-    padding: 40px;
-    border: 1px solid var(--sisd-grey); /* Subtle border */
-    border-radius: 10px;
-    text-align: center;
-    width: 350px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow */
-  }
-  
-  h1 {
-    color: var(--sisd-grey);
-  }
-  
-  p {
-    color: var(--sisd-grey);
-  }
-  
-  .role-buttons {
-    margin-top: 20px;
-  }
-  
-  .btn {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--color-white);
-    background-color: var(--sisd-blue);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow */
-  }
-  
-  .btn:hover {
-    background-color: #009ddd; /* Slightly darker blue */
-  }
-  
+  --sisd-blue: #00AEEF;
+  --sisd-grey: #58595B;
+  --color-white: #ffffff;
+  --color-light-grey: #f3f3f3;
+}
+
+/* Reset basic styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-light-grey);
+}
+
+/* Main container holds sidebar and main content */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 220px;
+  background-color: var(--sisd-blue);
+  color: var(--color-white);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  font-size: 1.6em;
+  color: var(--color-white);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  display: block;
+  border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+  background-color: var(--color-white);
+  color: var(--sisd-blue);
+}
+
+/* Highlight Active Page */
+.sidebar a.active {
+  background-color: var(--color-white);
+  color: var(--sisd-blue);
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Main content area */
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: var(--color-light-grey);
+  overflow-y: auto;
+}
+
+.main-content h1 {
+  color: var(--sisd-blue);
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.main-content p {
+  color: var(--sisd-grey);
+  font-size: 1.2em;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: var(--color-white);
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-light-grey);
+}
+
+th {
+  background-color: var(--sisd-blue);
+  color: var(--color-white);
+}
+
+tr:hover {
+  background-color: var(--color-light-grey);
+}
+
+/* Metric card styling (for Revenue, Usage pages) */
+.metric {
+  background-color: var(--color-white);
+  border: 1px solid var(--sisd-grey);
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.metric:hover {
+  transform: translateY(-5px);
+}
+
+.metric h2 {
+  color: var(--sisd-blue);
+  margin-bottom: 10px;
+}
+
+.metric p {
+  font-size: 1.5em;
+  color: var(--sisd-grey);
+}
