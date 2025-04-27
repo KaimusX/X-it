@@ -22,7 +22,14 @@
 
     // Cost Breakdown
     const facilityFee = 100; // Flat fee
-    const staffAdjustment = attendees > 100 ? 75 : 30; // Adjusted logic
+        let staffAdjustment;
+    if (attendees > 200) {
+    staffAdjustment = 100;
+    } else if (attendees > 100) {
+    staffAdjustment = 75;
+    } else {
+    staffAdjustment = 30;
+    }
     const subtotal = facilityFee + staffAdjustment;
     const serviceFee = subtotal * 0.05;  // 5% service fee
     const taxes = subtotal * 0.0825;     // 8.25% taxes
