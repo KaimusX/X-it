@@ -96,6 +96,7 @@ def login():
         return jsonify({'success': True, 'message': 'User created'})
 
 # ---- AI Analysis Function ----
+# ---- AI Analysis Function (Improved AI Task Bot) ----
 def analyze_reservation(event_type, attendees, facility):
     headers = {
         'Authorization': f'Bearer {OPENAI_API_KEY}',
@@ -103,21 +104,34 @@ def analyze_reservation(event_type, attendees, facility):
     }
 
     prompt = f"""
-    Event Type: {event_type}
-    Attendees: {attendees}
-    Facility: {facility}
+    You are an AI Facility Manager Bot.
 
-    What staffing (custodians, security) is needed for this event? Are there any documents (insurance, permits) typically required?
+    Event Details:
+    - Event Type: {event_type}
+    - Number of Attendees: {attendees}
+    - Facility: {facility}
+
+    Task:
+    1. Predict how many custodians are needed.
+    2. Predict how many security personnel are needed.
+    3. List any documents that should be collected (e.g., insurance, permits).
+    4. Return your answer in a clean JSON format with keys: "custodians", "security", "documents".
+
+    Example Response:
+    {{
+        "custodians": 2,
+        "security": 1,
+        "documents": ["Liability Insurance", "Special Use Permit"]
+    }}
     """
 
-    # Call OpenAI API (ChatGPT)
     response = requests.post(
         'https://api.openai.com/v1/chat/completions',
         headers=headers,
         json={
             'model': 'gpt-3.5-turbo',
             'messages': [{'role': 'user', 'content': prompt}],
-            'max_tokens': 150
+            'max_tokens': 200
         }
     )
 
