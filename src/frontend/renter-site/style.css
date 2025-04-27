@@ -191,11 +191,12 @@ main{
 
 .listing h2{
     font-size: 15px;
-    padding-top: 8px;
     flex: 1;
 }
 
 .listing .top{
+    margin-top: 8px;
+
     display: flex;
     justify-content: center;
     align-items: center;
