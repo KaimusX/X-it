@@ -39,6 +39,15 @@
   
   .sidebar ul li {
     margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sidebar ul li svg{
+    margin: 15px 0;
+    display: flex;
+    width: 30px;
   }
   
   .sidebar ul li a {
@@ -75,12 +84,16 @@
   
   .facility {
     background-color: var(--color-white);
-    border: 1px solid var(--sisd-grey);
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
     text-align: center;
+    box-shadow: 4px 4px 14px -6px black;
+  }
+
+  .facility a{
+    text-decoration: none;
+    font-size: 20px;
   }
   
   .facility:hover {
