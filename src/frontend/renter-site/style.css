@@ -9,6 +9,13 @@
     font-optical-sizing: auto;
 }
 
+:root {
+    --sisd-blue: #00AEEF;
+    --sisd-grey: #58595B;
+    --color-white: #fff;
+    --color-light-grey: #f3f3f3;
+  }
+
 
 
 img{
@@ -58,7 +65,8 @@ header img{
     gap:15px;
     padding: 10px 10px;
     border-radius: 20px;
-    box-shadow: 0px 0px 5px gray;
+    box-shadow: 0px 0px 2px gray;
+    cursor: pointer;
 }
  .profile .icon{
     transform: scale(1.7);
@@ -80,7 +88,7 @@ main{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 2fr;
     border-radius: 40px;
-    box-shadow: 0px 0px 5px gray;
+    box-shadow: 0px 1px 5px -1px gray;
     position: relative;
 }
 
@@ -113,13 +121,17 @@ main{
     width: 40px;
     height: 40px;
 
-    background-color: red;
+    background-color: var(--sisd-blue);
     top: 6px;
     right: 7px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.search button:hover{
+    background-color: #009dd6 ;
 }
 
 .search button img{
@@ -191,11 +203,12 @@ main{
 
 .listing h2{
     font-size: 15px;
-    padding-top: 8px;
     flex: 1;
 }
 
 .listing .top{
+    margin-top: 8px;
+
     display: flex;
     justify-content: center;
     align-items: center;
