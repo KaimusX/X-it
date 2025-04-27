@@ -4,7 +4,19 @@
     box-sizing: border-box;
     border: none;
     outline: none;
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
 }
+
+:root {
+    --sisd-blue: #00AEEF;
+    --sisd-grey: #58595B;
+    --color-white: #fff;
+    --color-light-grey: #f3f3f3;
+  }
+
+
 
 img{
     display: block;
@@ -20,6 +32,17 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    box-shadow: 0px 2px 3px -2px gray;
+
+    padding-bottom: 20px;
+
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    background-color: white;
+
 }
 
 a{
@@ -42,7 +65,8 @@ header img{
     gap:15px;
     padding: 10px 10px;
     border-radius: 20px;
-    box-shadow: 0px 0px 5px gray;
+    box-shadow: 0px 0px 2px gray;
+    cursor: pointer;
 }
  .profile .icon{
     transform: scale(1.7);
@@ -56,22 +80,15 @@ main{
 }
 
 .searchContainer{
-
-    align-content: center;
     display: flex;
     justify-content: center;
-
-    box-shadow: 0px 2px 3px -2px gray;
-    padding-bottom: 20px;
-
 }
 
 .search{
     display: grid;
-    width: 45%;
     grid-template-columns: 2fr 1fr 1fr 2fr;
     border-radius: 40px;
-    box-shadow: 0px 0px 5px gray;
+    box-shadow: 0px 1px 5px -1px gray;
     position: relative;
 }
 
@@ -81,6 +98,7 @@ main{
 
 .search p{
     font-size: 14px;
+    color: rgb(80, 80, 80);
 }
 
 .search > div{
@@ -103,13 +121,17 @@ main{
     width: 40px;
     height: 40px;
 
-    background-color: red;
+    background-color: var(--sisd-blue);
     top: 6px;
     right: 7px;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.search button:hover{
+    background-color: #009dd6 ;
 }
 
 .search button img{
@@ -121,9 +143,10 @@ main{
 .categorySection{
     display: grid;
     grid-template-columns: repeat(17, 1fr);
-    margin-top: 20px;
+    margin-top: 5px;
     padding-left: 60px;
     padding-right: 60px;
+    font-size: 15px;
 }
 
 .categorySection > div{
@@ -158,4 +181,84 @@ main{
 
     flex-direction: row;
     gap: 10px;
+}
+
+/* category section end */
+
+.listingSection{
+    padding: 20px 60px;
+}
+
+.listingSection{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.listing{
+    aspect-ratio: 5/7;
+    cursor: pointer;
+    position: relative;
+}
+
+.listing h2{
+    font-size: 15px;
+    flex: 1;
+}
+
+.listing .top{
+    margin-top: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+.listing .top img{
+    width: 16px;
+}
+
+.listing p{
+    color: rgb(59, 59, 59);
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.listing p span{
+    text-decoration: underline;
+    color: black;
+    font-weight: 600;
+}
+
+.listingImg{
+    aspect-ratio: 1/1;
+    border-radius: 25px;
+}
+
+.listingInfo{
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.showMoreBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 40px;
+    padding-bottom: 120px;
+}
+
+.showMoreBox h2{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.showMoreBox button{
+    background-color: black;
+    color: whitesmoke;
+    padding: 15px 30px;
+    border-radius: 13px;
+    font-size: 18px;
+    cursor: pointer;
 }
