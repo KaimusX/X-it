@@ -75,7 +75,7 @@
   
   .facility {
     background-color: var(--color-white);
-    border: 1px solid var(--sisd-grey);
+    /* border: 1px solid var(--sisd-grey); */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
