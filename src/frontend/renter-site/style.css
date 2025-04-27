@@ -60,6 +60,10 @@ main{
     align-content: center;
     display: flex;
     justify-content: center;
+
+    box-shadow: 0px 2px 3px -2px gray;
+    padding-bottom: 20px;
+
 }
 
 .search{
@@ -110,4 +114,48 @@ main{
 
 .search button img{
     width: 22px;
+}
+
+/* end search */
+
+.categorySection{
+    display: grid;
+    grid-template-columns: repeat(17, 1fr);
+    margin-top: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.categorySection > div{
+    width: 100px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    opacity: .6;
+}
+.categorySection > div:hover{
+   opacity: 1;
+}
+
+.categorySection img{
+    width: 25px;
+}
+
+.categorySection > div > button{
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.categorySection .filter{
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+
+    flex-direction: row;
+    gap: 10px;
 }
