@@ -1,0 +1,87 @@
+:root {
+    --sisd-blue: #00AEEF;
+    --sisd-grey: #58595B;
+    --color-white: #fff;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--sisd-blue);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .payment-container {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: var(--sisd-grey);
+  }
+  
+  p {
+    color: var(--sisd-grey);
+    margin: 10px 0;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: var(--sisd-blue);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #009ddd;
+  }
+
+  #breakdown {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  #breakdown p {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+  }
+  
+  #breakdown hr {
+    margin: 15px 0;
+  }
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-content h3 {
+    color: var(--sisd-grey);
+  }
+  
+  

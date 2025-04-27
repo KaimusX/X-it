@@ -40,3 +40,14 @@ if (facilityName) {
     document.getElementById('responseMessage').innerText = 'Error connecting to server.';
   }
 });
+
+document.getElementById('reservationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Collect data (for the payment breakdown if needed)
+  const facility = document.getElementById('facility').value || 'Facility';
+  const attendees = document.getElementById('attendees').value || 0;
+
+  // Redirect to payment page with query parameters
+  window.location.href = `../payment-page/payment.html?facility=${encodeURIComponent(facility)}&attendees=${attendees}`;
+});

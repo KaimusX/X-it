@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+  <div class="payment-container">
+    <h2>Payment Summary</h2>
+    <div id="breakdown">
+      <!-- Cost breakdown will go here -->
+    </div>
+    <button id="confirmPayment">Confirm Payment</button>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const facility = urlParams.get('facility') || 'Facility';
+    const attendees = parseInt(urlParams.get('attendees')) || 0;
+
+    // Cost Breakdown
+    const facilityFee = 100; // Flat fee
+        let staffAdjustment;
+    if (attendees > 200) {
+    staffAdjustment = 100;
+    } else if (attendees > 100) {
+    staffAdjustment = 75;
+    } else {
+    staffAdjustment = 30;
+    }
+    const subtotal = facilityFee + staffAdjustment;
+    const serviceFee = subtotal * 0.05;  // 5% service fee
+    const taxes = subtotal * 0.0825;     // 8.25% taxes
+    const total = subtotal + serviceFee + taxes;
+
+    // Display breakdown
+    document.getElementById('breakdown').innerHTML = `
+    <p><strong>Facility:</strong> ${facility}</p>
+    <p>Facility Fee: $${facilityFee.toFixed(2)}</p>
+    <p>Adjustment for Staff Needed: $${staffAdjustment.toFixed(2)}</p>
+    <p>Service Fee (5%): $${serviceFee.toFixed(2)}</p>
+    <p>Taxes (8.25%): $${taxes.toFixed(2)}</p>
+    <hr>
+    <p><strong>Total: $${total.toFixed(2)}</strong></p>
+    `;
+
+    document.getElementById('confirmPayment').addEventListener('click', () => {
+    const modal = document.getElementById('confirmationModal');
+    modal.style.display = 'flex'; // Show the modal
+
+    // Redirect after 3 seconds
+    setTimeout(() => {
+        window.location.href = '../index.html';
+    }, 3000);
+    });
+  </script>
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <h3>Payment Successful!</h3>
+      <p>Your reservation has been submitted. You will be redirected shortly...</p>
+    </div>
+  </div>  
+</body>
+</html>
